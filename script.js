@@ -28,61 +28,106 @@ function confettiExplosion() {
     // Uncomment to re-explode every 7 seconds:
     // setInterval(confettiExplosion, 7000);
     
+    // Set up play button immediately
+    const playBtn = document.getElementById('musicPlayBtn');
+    if (playBtn) {
+      playBtn.addEventListener('click', togglePlay);
+    }
+    
     // Try to start music on first user interaction
     setupMusicAutoplay();
   });
 
-  function setupMusicAutoplay() {
-    const youtubePlayer = document.getElementById('youtubePlayer');
-    const playBtn = document.getElementById('musicPlayBtn');
-    if (!youtubePlayer || !playBtn) return;
-    
-    let isPlaying = false;
-    
-    // Function to play the music
-    const playMusic = () => {
-      try {
-        // Use YouTube iframe API to play
-        youtubePlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        playBtn.textContent = '⏸ MUSIC PLAYING';
-        playBtn.classList.add('playing');
-        isPlaying = true;
-      } catch (e) {
-        console.log('Music play error:', e);
+  let youtubeIframe = null;
+  let isPlaying = false;
+
+  function sendCommand(command) {
+    if (!youtubeIframe) {
+      youtubeIframe = document.getElementById('youtubePlayer');
+      if (!youtubeIframe) {
+        console.error('YouTube iframe not found');
+        return;
       }
-    };
+    }
     
-    // Function to pause the music
-    const pauseMusic = () => {
-      try {
-        youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        playBtn.textContent = '▶ PLAY MUSIC';
-        playBtn.classList.remove('playing');
-        isPlaying = false;
-      } catch (e) {
-        console.log('Music pause error:', e);
+    try {
+      const message = JSON.stringify({
+        event: 'command',
+        func: command,
+        args: ''
+      });
+      youtubeIframe.contentWindow.postMessage(message, 'https://www.youtube.com');
+      console.log('Sent command:', command);
+    } catch (e) {
+      console.error('Error sending command:', e);
+    }
+  }
+
+  function togglePlay() {
+    if (!youtubeIframe) {
+      youtubeIframe = document.getElementById('youtubePlayer');
+      if (!youtubeIframe) {
+        alert('Player not found. Please refresh the page.');
+        return;
       }
-    };
+    }
     
-    // Play button click handler
-    playBtn.addEventListener('click', () => {
+    try {
       if (isPlaying) {
-        pauseMusic();
+        sendCommand('pauseVideo');
+        isPlaying = false;
+        const playBtn = document.getElementById('musicPlayBtn');
+        if (playBtn) {
+          playBtn.textContent = '▶ PLAY MUSIC';
+          playBtn.classList.remove('playing');
+        }
+        console.log('Paused video');
       } else {
-        playMusic();
+        sendCommand('playVideo');
+        isPlaying = true;
+        const playBtn = document.getElementById('musicPlayBtn');
+        if (playBtn) {
+          playBtn.textContent = '⏸ MUSIC PLAYING';
+          playBtn.classList.add('playing');
+        }
+        console.log('Playing video');
+      }
+    } catch (e) {
+      console.error('Error toggling play:', e);
+      alert('Error: ' + e.message);
+    }
+  }
+
+  function setupMusicAutoplay() {
+    youtubeIframe = document.getElementById('youtubePlayer');
+    
+    // Listen for messages from YouTube iframe to track state
+    window.addEventListener('message', (event) => {
+      if (event.origin !== 'https://www.youtube.com') return;
+      
+      try {
+        const data = JSON.parse(event.data);
+        if (data.event === 'onStateChange') {
+          const playBtn = document.getElementById('musicPlayBtn');
+          if (data.info === 1) { // Playing
+            isPlaying = true;
+            if (playBtn) {
+              playBtn.textContent = '⏸ MUSIC PLAYING';
+              playBtn.classList.add('playing');
+            }
+          } else if (data.info === 2 || data.info === 0) { // Paused or Ended
+            isPlaying = false;
+            if (playBtn) {
+              playBtn.textContent = '▶ PLAY MUSIC';
+              playBtn.classList.remove('playing');
+            }
+          }
+        }
+      } catch (e) {
+        // Not a JSON message, ignore
       }
     });
     
-    // Try to autoplay on page load (may be blocked)
-    setTimeout(() => {
-      try {
-        youtubePlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        playBtn.textContent = '⏸ MUSIC PLAYING';
-        playBtn.classList.add('playing');
-        isPlaying = true;
-      } catch (e) {
-        // Autoplay blocked, button will be ready for user to click
-      }
-    }, 500);
+    console.log('Music player setup complete');
   }
   
