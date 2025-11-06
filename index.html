@@ -4,133 +4,133 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta name="deploy-timestamp" content="2024-12-19" />
   <title>Molly's MySpace - 28 and FABULOUS!!!</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Impact&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Impact&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated background -->
-  <div class="myspace-bg"></div>
+  <!-- Tiled background pattern -->
+  <div class="tiled-bg"></div>
   
-
-  <div class="myspace-container">
-    <!-- Profile header with glitter text -->
-    <div class="profile-header">
-      <h1 class="glitter-title">~*~* HAPPY BIRTHDAY MOLLY SHEA ~*~*</h1>
-      <marquee behavior="scroll" direction="left" class="marquee-text">
-        <span class="blink">✨ 28 AND FABULOUS ✨</span> | 
-        <span class="blink">💖 MOLLY SLAY 💖</span> | 
-        <span class="blink">🎂 BEST DAY EVER 🎂</span>
-      </marquee>
-    </div>
-
-    <!-- Top 8 Friends Section -->
-    <div class="top-8-section">
-      <h2 class="top-8-title">~*~ TOP 8 ~*~</h2>
-      <div class="friends-grid">
-        <div class="friend-box">
-          <div class="friend-number">1</div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Ariana_Grande_2013.jpg/800px-Ariana_Grande_2013.jpg" alt="Ariana Grande" class="friend-img" onerror="this.src='https://via.placeholder.com/150/ff69b4/ffffff?text=Ariana'">
-          <p class="friend-name">Ariana Grande</p>
-          <div class="friend-status">🎵 "Molly is ICONIC"</div>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">2</div>
-          <img src="images/lana_laydown.png" alt="Lana Del Rey" class="friend-img lana-friend">
-          <p class="friend-name">Lana Del Rey</p>
-          <div class="friend-status">💋 "Woah Molly, you're the GOAT!"</div>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">3</div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Addison_Rae_2021.png" alt="Addison Rae" class="friend-img" onerror="this.src='https://via.placeholder.com/150/00bfff/ffffff?text=Addison'">
-          <p class="friend-name">Addison Rae</p>
-          <div class="friend-status">✨ "I wish I could slay like you!"</div>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">4</div>
-          <div class="friend-placeholder">YOUR FRIEND</div>
-          <p class="friend-name">Friend #4</p>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">5</div>
-          <div class="friend-placeholder">YOUR FRIEND</div>
-          <p class="friend-name">Friend #5</p>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">6</div>
-          <div class="friend-placeholder">YOUR FRIEND</div>
-          <p class="friend-name">Friend #6</p>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">7</div>
-          <div class="friend-placeholder">YOUR FRIEND</div>
-          <p class="friend-name">Friend #7</p>
-        </div>
-        
-        <div class="friend-box">
-          <div class="friend-number">8</div>
-          <div class="friend-placeholder">YOUR FRIEND</div>
-          <p class="friend-name">Friend #8</p>
+  <!-- Main content wrapper -->
+  <div class="profile-wrapper">
+    <!-- Left Sidebar -->
+    <div class="sidebar-left">
+      <div class="profile-pic-box">
+        <h3 class="sidebar-title">~*~ PROFILE PIC ~*~</h3>
+        <div class="profile-pic-frame">
+          <img src="images/lana_laydown.png" alt="Molly" class="profile-pic">
         </div>
       </div>
-    </div>
-
-    <!-- About Me Section -->
-    <div class="about-section">
-      <h2 class="section-title">~*~ ABOUT MOLLY ~*~</h2>
-      <div class="about-content">
-        <p class="blink-text">🎂 TURNING 28 TODAY! 🎂</p>
-        <p>Your friends + fam love you SO MUCH!</p>
-        <p class="glitter-link">
-          <a href="board.html" class="myspace-button">~*~ LEAVE A MESSAGE ~*~</a>
-        </p>
+      
+      <div class="contact-box">
+        <h3 class="sidebar-title">~*~ CONTACT MOLLY ~*~</h3>
+        <p class="contact-text">🎂 BIRTHDAY GIRL 🎂</p>
+        <p class="contact-text">📍 Celebrating 28 Years</p>
+        <p class="contact-text">💖 Fabulous & Iconic 💖</p>
       </div>
-    </div>
-
-    <!-- Music Player Section -->
-    <div class="music-section">
-      <h2 class="section-title">~*~ MYSPACE MUSIC PLAYER ~*~</h2>
-      <div class="music-player">
-        <div class="music-info">
-          <p class="now-playing blink">🎵 NOW PLAYING 🎵</p>
-          <p class="song-title">Happy Birthday - Molly's Theme</p>
-        </div>
-        <audio id="myspaceAudio" autoplay loop>
-          <!-- Add your music file here! Place it in a 'music' folder and update the src -->
+      
+      <div class="music-box">
+        <h3 class="sidebar-title">~*~ MYSPACE MUSIC ~*~</h3>
+        <audio id="myspaceAudio" loop>
           <source src="music/birthday-song.mp3" type="audio/mpeg">
           <source src="music/birthday-song.ogg" type="audio/ogg">
-          Your browser doesn't support the audio element.
         </audio>
-        <div class="audio-controls">
-          <button id="playPauseBtn" class="music-btn">⏸ PAUSE</button>
-          <button id="volumeBtn" class="music-btn">🔊 VOLUME</button>
-          <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+        <div class="audio-controls-compact">
+          <button id="playPauseBtn" class="tiny-btn">▶</button>
+          <button id="volumeBtn" class="tiny-btn">🔊</button>
+          <input type="range" id="volumeSlider" min="0" max="100" value="70" class="tiny-slider">
         </div>
-        <p class="music-note">💿 Add your own music by uploading a file to the 'music' folder!</p>
+        <p class="music-label">Now Playing: Birthday Song</p>
       </div>
     </div>
 
-    <!-- Status Section -->
-    <div class="status-section">
-      <h2 class="section-title">~*~ CURRENT STATUS ~*~</h2>
-      <div class="status-content">
-        <p class="status-text">🎉 <span class="blink">CELEBRATING 28 YEARS OF BEING AMAZING!!!</span> 🎉</p>
-        <p class="mood-text">Mood: <span class="blink">✨ FABULOUS ✨</span></p>
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="profile-header-messy">
+        <h1 class="main-title">~*~* HAPPY BIRTHDAY MOLLY SHEA ~*~*</h1>
+        <marquee behavior="scroll" direction="left" class="marquee-banner">
+          <span class="blink">✨ 28 AND FABULOUS ✨</span> | 
+          <span class="blink">💖 MOLLY SLAY 💖</span> | 
+          <span class="blink">🎂 BEST DAY EVER 🎂</span> |
+          <span class="blink">🌟 TURNING 28 TODAY 🌟</span>
+        </marquee>
       </div>
-    </div>
 
-    <!-- Footer -->
-    <div class="myspace-footer">
-      <p class="footer-text">Made with 💖 by Mia</p>
-      <p class="footer-text">This website was primarily vibecoded, so if something breaks just text me and I'll fix it.</p>
-      <p class="footer-text blink">~*~ XOXO ~*~</p>
+      <!-- Top 8 Friends -->
+      <div class="friends-section">
+        <h2 class="section-header">~*~ TOP 8 FRIENDS ~*~</h2>
+        <div class="friends-list">
+          <div class="friend-item">
+            <span class="friend-rank">1.</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Ariana_Grande_2013.jpg/800px-Ariana_Grande_2013.jpg" alt="Ariana" class="tiny-friend-pic" onerror="this.src='https://via.placeholder.com/50/ff69b4/ffffff?text=A'">
+            <span class="friend-name-small">Ariana Grande</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">2.</span>
+            <img src="images/lana_laydown.png" alt="Lana" class="tiny-friend-pic">
+            <span class="friend-name-small">Lana Del Rey</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">3.</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Addison_Rae_2021.png" alt="Addison" class="tiny-friend-pic" onerror="this.src='https://via.placeholder.com/50/00bfff/ffffff?text=A'">
+            <span class="friend-name-small">Addison Rae</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">4.</span>
+            <div class="tiny-friend-pic placeholder-pic">?</div>
+            <span class="friend-name-small">Friend #4</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">5.</span>
+            <div class="tiny-friend-pic placeholder-pic">?</div>
+            <span class="friend-name-small">Friend #5</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">6.</span>
+            <div class="tiny-friend-pic placeholder-pic">?</div>
+            <span class="friend-name-small">Friend #6</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">7.</span>
+            <div class="tiny-friend-pic placeholder-pic">?</div>
+            <span class="friend-name-small">Friend #7</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">8.</span>
+            <div class="tiny-friend-pic placeholder-pic">?</div>
+            <span class="friend-name-small">Friend #8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <div class="about-box">
+        <h2 class="section-header">~*~ ABOUT MOLLY ~*~</h2>
+        <div class="about-text">
+          <p class="blink-text">🎂 TURNING 28 TODAY! 🎂</p>
+          <p>Your friends + fam love you SO MUCH!!!</p>
+          <p>This is the best birthday ever because you're amazing and everyone knows it!!!</p>
+          <p class="glitter-link">
+            <a href="board.html" class="messy-link">~*~ LEAVE A MESSAGE ~*~</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Status -->
+      <div class="status-box">
+        <h2 class="section-header">~*~ CURRENT STATUS ~*~</h2>
+        <p class="status-message">🎉 <span class="blink">CELEBRATING 28 YEARS OF BEING AMAZING!!!</span> 🎉</p>
+        <p class="mood-display">Mood: <span class="blink">✨ FABULOUS ✨</span></p>
+      </div>
+
+      <!-- Footer -->
+      <div class="profile-footer">
+        <p class="footer-note">Made with 💖 by Mia</p>
+        <p class="footer-note">This website was primarily vibecoded, so if something breaks just text me and I'll fix it.</p>
+        <p class="footer-note blink">~*~ XOXO ~*~</p>
+      </div>
     </div>
   </div>
 
