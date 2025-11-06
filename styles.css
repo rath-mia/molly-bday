@@ -350,10 +350,17 @@ body {
   border: 2px solid #00ffff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, auto);
-  grid-auto-flow: column;
   gap: 10px;
 }
+
+.friend-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+.friend-item:nth-child(2) { grid-column: 1; grid-row: 2; }
+.friend-item:nth-child(3) { grid-column: 1; grid-row: 3; }
+.friend-item:nth-child(4) { grid-column: 1; grid-row: 4; }
+.friend-item:nth-child(5) { grid-column: 2; grid-row: 1; }
+.friend-item:nth-child(6) { grid-column: 2; grid-row: 2; }
+.friend-item:nth-child(7) { grid-column: 2; grid-row: 3; }
+.friend-item:nth-child(8) { grid-column: 2; grid-row: 4; }
 
 .friend-item {
   display: flex;
