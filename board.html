@@ -8,26 +8,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Impact&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated background -->
-  <div class="myspace-bg"></div>
+  <!-- Tiled background pattern -->
+  <div class="tiled-bg"></div>
   
-  <div class="myspace-container">
-    <div class="profile-header">
-      <h1 class="glitter-title">~*~ BIRTHDAY MESSAGES ~*~</h1>
-      <marquee behavior="scroll" direction="left" class="marquee-text">
-        <span class="blink">✨ LEAVE MOLLY A MESSAGE ✨</span> | 
-        <span class="blink">💖 SHOW SOME LOVE 💖</span>
-      </marquee>
-      <p style="margin-top: 15px;">
-        <a href="index.html" class="myspace-button">← BACK TO PROFILE</a>
-      </p>
-    </div>
+  <div class="profile-wrapper">
+    <div class="main-content" style="max-width: 100%;">
+      <div class="profile-header-messy">
+        <h1 class="main-title">~*~ BIRTHDAY MESSAGES ~*~</h1>
+        <marquee behavior="scroll" direction="left" class="marquee-banner">
+          <span class="blink">✨ LEAVE MOLLY A MESSAGE ✨</span> | 
+          <span class="blink">💖 SHOW SOME LOVE 💖</span>
+        </marquee>
+        <p style="margin-top: 15px;">
+          <a href="index.html" class="messy-link">← BACK TO PROFILE</a>
+        </p>
+      </div>
 
     <div class="board-container">
       <!-- Post Form -->
       <section class="post-form-section">
         <div class="post-form-card">
-          <h2 class="section-title">~*~ LEAVE A MESSAGE ~*~</h2>
+          <h2 class="section-header">~*~ LEAVE A MESSAGE ~*~</h2>
           <form id="messageForm">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -55,16 +56,17 @@
 
       <!-- Messages Board -->
       <section class="messages-section">
-        <h2 class="section-title">~*~ MESSAGES FROM FRIENDS & FAMILY ~*~</h2>
+        <h2 class="section-header">~*~ MESSAGES FROM FRIENDS & FAMILY ~*~</h2>
         <div id="messagesBoard" class="messages-board">
           <!-- Messages will be dynamically inserted here -->
         </div>
       </section>
     </div>
 
-    <div class="myspace-footer">
-      <p class="footer-text">Made with 💖 by Mia</p>
-      <p class="footer-text blink">~*~ XOXO ~*~</p>
+      <div class="profile-footer">
+        <p class="footer-note">Made with 💖 by Mia</p>
+        <p class="footer-note blink">~*~ XOXO ~*~</p>
+      </div>
     </div>
   </div>
 
