@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Board - Molly Turns 28</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="title-wrap">
+      <h1>Birthday Messages for Molly</h1>
+      <p class="friends-line">
+        <a href="index.html" class="button">← Back to Home</a>
+      </p>
+    </div>
+  </header>
+
+  <div class="board-container">
+    <!-- Post Form -->
+    <section class="post-form-section">
+      <div class="post-form-card">
+        <h2>Leave a Message</h2>
+        <form id="messageForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your birthday wish here..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Add a Photo (optional)</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <div class="image-preview" id="imagePreview" style="display: none;">
+              <img id="previewImg" src="" alt="Preview">
+              <button type="button" class="remove-image" id="removeImage">×</button>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">Post Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Messages Board -->
+    <section class="messages-section">
+      <h2>Messages from Friends & Family</h2>
+      <div id="messagesBoard" class="messages-board">
+        <!-- Messages will be dynamically inserted here -->
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ by Mia</p>
+  </footer>
+
+  <script src="board.js"></script>
+</body>
+</html>
+
