@@ -312,6 +312,116 @@ body {
   50% { transform: scale(1.05); }
 }
 
+/* Music Player Section */
+.music-section {
+  background: linear-gradient(135deg, #ff1493, #8a2be2);
+  border: 4px solid #00ffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+}
+
+.music-player {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid #ff00ff;
+  text-align: center;
+}
+
+.music-info {
+  margin-bottom: 15px;
+}
+
+.now-playing {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff00ff;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 0 #ffff00;
+}
+
+.song-title {
+  font-size: 1.3rem;
+  font-family: "Impact", sans-serif;
+  color: #333;
+  margin: 0;
+  text-shadow: 1px 1px 0 #ff00ff;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.music-btn {
+  background: linear-gradient(to bottom, #ff00ff, #ff1493);
+  color: #fff;
+  border: 3px solid #00ffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: "Impact", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+  transition: all 0.3s;
+}
+
+.music-btn:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.music-btn:active {
+  transform: scale(0.95);
+}
+
+.volume-slider {
+  width: 150px;
+  height: 8px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ff00ff;
+  border: 3px solid #00ffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ff00ff;
+  border: 3px solid #00ffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+}
+
+.music-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 15px;
+  font-style: italic;
+}
+
 /* Status Section */
 .status-section {
   background: linear-gradient(135deg, #00ffff, #ff00ff);

@@ -94,6 +94,29 @@
       </div>
     </div>
 
+    <!-- Music Player Section -->
+    <div class="music-section">
+      <h2 class="section-title">~*~ MYSPACE MUSIC PLAYER ~*~</h2>
+      <div class="music-player">
+        <div class="music-info">
+          <p class="now-playing blink">🎵 NOW PLAYING 🎵</p>
+          <p class="song-title">Happy Birthday - Molly's Theme</p>
+        </div>
+        <audio id="myspaceAudio" autoplay loop>
+          <!-- Add your music file here! Place it in a 'music' folder and update the src -->
+          <source src="music/birthday-song.mp3" type="audio/mpeg">
+          <source src="music/birthday-song.ogg" type="audio/ogg">
+          Your browser doesn't support the audio element.
+        </audio>
+        <div class="audio-controls">
+          <button id="playPauseBtn" class="music-btn">⏸ PAUSE</button>
+          <button id="volumeBtn" class="music-btn">🔊 VOLUME</button>
+          <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+        </div>
+        <p class="music-note">💿 Add your own music by uploading a file to the 'music' folder!</p>
+      </div>
+    </div>
+
     <!-- Status Section -->
     <div class="status-section">
       <h2 class="section-title">~*~ CURRENT STATUS ~*~</h2>
