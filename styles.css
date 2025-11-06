@@ -596,17 +596,72 @@ body {
   z-index: 1;
 }
 
+.greg-box {
+  width: 100%;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #fff, #e0f7fa);
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 12px rgba(0, 255, 255, 0.4);
+  transform: rotate(-1deg);
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.greg-box::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  border-radius: 8px;
+  z-index: -1;
+  animation: rainbow-bg 3s linear infinite;
+}
+
+.greg-image {
+  flex: 0 0 auto;
+  width: 80px;
+  height: auto;
+  display: block;
+  border: 2px solid #ff00ff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(255, 0, 255, 0.5);
+}
+
+.greg-message {
+  flex: 1;
+  text-align: left;
+}
+
+.greg-text {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 0.7rem;
+  color: #333;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  border: 2px dashed #ff00ff;
+}
+
 .post-form-section {
   margin-bottom: 3rem;
 }
 
 .post-form-card {
+  max-width: 600px;
+  margin: 0 auto;
   background: linear-gradient(135deg, #fff, #ffe4e1);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
   border: 4px solid #ff00ff;
   position: relative;
 }
@@ -1041,5 +1096,24 @@ body {
   
   .board-container {
     padding: 1rem;
+  }
+
+  .greg-box {
+    transform: rotate(0deg);
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .greg-image {
+    width: 70px;
+    margin: 0 auto;
+  }
+
+  .greg-message {
+    text-align: center;
+  }
+
+  .post-form-card {
+    max-width: 100%;
   }
 }
