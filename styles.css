@@ -361,24 +361,6 @@ body {
   text-shadow: 2px 2px 0 #000;
 }
 
-/* Cursor blink */
-.cursor-blink {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: #ff00ff;
-  z-index: 9999;
-  pointer-events: none;
-  animation: cursor-blink 1s infinite;
-  text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
-}
-
-@keyframes cursor-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
 
 /* Board page styles (keep existing) */
 .board-container {
