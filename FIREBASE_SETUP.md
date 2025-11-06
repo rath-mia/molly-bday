@@ -60,8 +60,10 @@ Follow these steps to set up Firebase for shared message storage:
                        request.resource.data.message is string &&
                        request.resource.data.name.size() > 0 &&
                        request.resource.data.message.size() > 0;
-         // Prevent updates and deletes (optional - for security)
-         allow update, delete: if false;
+         // Allow deletes (password protected in the app)
+         allow delete: if true;
+         // Prevent updates
+         allow update: if false;
        }
      }
    }

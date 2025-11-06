@@ -518,6 +518,28 @@ body {
   box-shadow: 5px 5px 0 rgba(255, 0, 255, 0.8);
 }
 
+.admin-login-btn {
+  display: inline-block;
+  background: linear-gradient(to bottom, #00ffff, #06d6a0);
+  color: #fff;
+  border: 2px solid #ff00ff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #000;
+  box-shadow: 2px 2px 0 #ff00ff;
+  transform: rotate(1deg);
+  transition: all 0.2s;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.admin-login-btn:hover {
+  transform: rotate(-1deg) scale(1.05);
+  background: linear-gradient(to bottom, #06d6a0, #00ffff);
+}
+
 /* Status Box */
 .status-box {
   background: linear-gradient(135deg, #ff1493, #8a2be2);

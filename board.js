@@ -53,6 +53,18 @@ function saveMessage(messageData) {
   });
 }
 
+// Delete message from Firestore
+function deleteMessage(messageId) {
+  return db.collection('messages').doc(messageId).delete()
+    .then(() => {
+      console.log('Message deleted:', messageId);
+    })
+    .catch((error) => {
+      console.error('Error deleting message:', error);
+      throw error;
+    });
+}
+
 // Display all messages on the board
 function displayMessages(messages) {
   const board = document.getElementById('messagesBoard');
@@ -67,11 +79,41 @@ function displayMessages(messages) {
     <div class="message-card">
       <div class="message-header">
         <h3 class="message-name">${escapeHtml(msg.name)}</h3>
+        <button class="delete-btn" data-message-id="${msg.id}" style="display: none; background: #ff3b5c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 11px;">× Delete</button>
       </div>
       <p class="message-text">${escapeHtml(msg.message).replace(/\n/g, '<br>')}</p>
       ${msg.image ? `<div class="message-image"><img src="${msg.image}" alt="Image from ${escapeHtml(msg.name)}"></div>` : ''}
     </div>
   `).join('');
+  
+  // Add click handlers for delete buttons
+  board.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation(); // Prevent card click from triggering
+      
+      if (!isAdminLoggedIn) {
+        alert('Please log in as admin to delete messages.');
+        return;
+      }
+      
+      const messageId = e.target.getAttribute('data-message-id');
+      
+      if (confirm('Are you sure you want to delete this message?')) {
+        try {
+          await deleteMessage(messageId);
+          // Message will disappear automatically via real-time listener
+        } catch (error) {
+          alert('Error deleting message. Make sure Firebase security rules allow deletes.');
+          console.error(error);
+        }
+      }
+    });
+    
+    // Show delete button if admin is logged in
+    if (isAdminLoggedIn) {
+      btn.style.display = 'block';
+    }
+  });
 }
 
 // Escape HTML to prevent XSS
@@ -165,6 +207,54 @@ function imageToBase64(file) {
   });
 }
 
+// Admin state
+let isAdminLoggedIn = false;
+const ADMIN_USERNAME = 'mia';
+const ADMIN_PASSWORD = 'mia';
+
+// Handle admin login
+function handleAdminLogin() {
+  const username = prompt('Username:');
+  const password = prompt('Password:');
+  
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    isAdminLoggedIn = true;
+    localStorage.setItem('mollyAdminLoggedIn', 'true');
+    updateAdminUI();
+    alert('✓ Admin mode enabled! Delete buttons are now visible.');
+  } else if (username !== null || password !== null) {
+    alert('Incorrect username or password');
+  }
+}
+
+// Handle admin logout
+function handleAdminLogout() {
+  isAdminLoggedIn = false;
+  localStorage.removeItem('mollyAdminLoggedIn');
+  updateAdminUI();
+  // Hide all delete buttons
+  document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.style.display = 'none';
+  });
+  alert('Admin mode disabled');
+}
+
+// Update admin UI
+function updateAdminUI() {
+  const loginBtn = document.getElementById('adminLoginBtn');
+  const statusSpan = document.getElementById('adminStatus');
+  
+  if (isAdminLoggedIn) {
+    loginBtn.textContent = '🚪 Logout';
+    loginBtn.onclick = handleAdminLogout;
+    if (statusSpan) statusSpan.style.display = 'inline';
+  } else {
+    loginBtn.textContent = '🔐 Admin Login';
+    loginBtn.onclick = handleAdminLogin;
+    if (statusSpan) statusSpan.style.display = 'none';
+  }
+}
+
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
   // Check if Firebase is initialized
@@ -172,6 +262,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('messagesBoard').innerHTML = 
       '<p class="no-messages" style="color: red;">⚠️ Firebase not configured. Please set up Firebase to enable message sharing.</p>';
     return;
+  }
+
+  // Check if admin was previously logged in
+  if (localStorage.getItem('mollyAdminLoggedIn') === 'true') {
+    isAdminLoggedIn = true;
+  }
+
+  // Set up admin login button
+  const adminLoginBtn = document.getElementById('adminLoginBtn');
+  if (adminLoginBtn) {
+    updateAdminUI();
   }
 
   const form = document.getElementById('messageForm');
@@ -183,6 +284,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set up real-time listener for messages
   setupRealtimeListener();
+  
+  // Show delete buttons when hovering on message cards (only if admin)
+  const board = document.getElementById('messagesBoard');
+  if (board) {
+    board.addEventListener('mouseenter', (e) => {
+      if (!isAdminLoggedIn) return;
+      const card = e.target.closest('.message-card');
+      if (card) {
+        const deleteBtn = card.querySelector('.delete-btn');
+        if (deleteBtn) {
+          deleteBtn.style.display = 'block';
+        }
+      }
+    }, true);
+    
+    board.addEventListener('mouseleave', (e) => {
+      if (!isAdminLoggedIn) return;
+      const card = e.target.closest('.message-card');
+      if (card) {
+        const deleteBtn = card.querySelector('.delete-btn');
+        if (deleteBtn && !card.matches(':hover')) {
+          deleteBtn.style.display = 'none';
+        }
+      }
+    }, true);
+  }
 
   // Handle image preview
   imageInput.addEventListener('change', async (e) => {
