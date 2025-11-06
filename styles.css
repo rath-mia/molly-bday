@@ -1102,6 +1102,7 @@ body {
     transform: rotate(0deg);
     flex-direction: column;
     margin-bottom: 1rem;
+    padding: 1rem;
   }
 
   .greg-image {
@@ -1111,6 +1112,15 @@ body {
 
   .greg-message {
     text-align: center;
+  }
+
+  .greg-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    line-height: 1.5;
   }
 
   .post-form-card {
