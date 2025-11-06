@@ -227,6 +227,37 @@ body {
   font-size: 11px;
 }
 
+.music-play-btn {
+  width: 100%;
+  background: linear-gradient(to bottom, #ff00ff, #ff1493);
+  color: #fff;
+  border: 3px solid #00ffff;
+  padding: 10px;
+  font-family: "Impact", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+  transition: all 0.2s;
+  transform: rotate(0.5deg);
+}
+
+.music-play-btn:hover {
+  transform: rotate(-0.5deg) scale(1.05);
+  box-shadow: 5px 5px 0 rgba(255, 0, 255, 0.6);
+}
+
+.music-play-btn:active {
+  transform: rotate(0deg) scale(0.98);
+}
+
+.music-play-btn.playing {
+  background: linear-gradient(to bottom, #06d6a0, #06a085);
+  animation: pulse 1.5s infinite;
+}
+
 #youtubePlayer {
   position: absolute;
   width: 1px;
@@ -902,6 +933,11 @@ body {
   
   .music-label {
     font-size: 9px;
+  }
+  
+  .music-play-btn {
+    padding: 8px;
+    font-size: 12px;
   }
   
   .messages-board {
