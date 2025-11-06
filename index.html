@@ -16,32 +16,25 @@
   <div class="profile-wrapper">
     <!-- Left Sidebar -->
     <div class="sidebar-left">
-      <div class="profile-pic-box">
-        <h3 class="sidebar-title">~*~ PROFILE PIC ~*~</h3>
-        <div class="profile-pic-frame">
-          <img src="images/molly-profile.jpg" alt="Molly" class="profile-pic" onerror="this.src='images/lana_laydown.png'">
-        </div>
-      </div>
-      
       <div class="contact-box">
         <h3 class="sidebar-title">~*~ CONTACT MOLLY ~*~</h3>
-        <p class="contact-text">🎂 BIRTHDAY GIRL 🎂</p>
-        <p class="contact-text">📍 Celebrating 28 Years</p>
-        <p class="contact-text">💖 Fabulous & Iconic 💖</p>
+        <p class="contact-text">don't , i have a girlfriend</p>
       </div>
       
       <div class="music-box">
-        <h3 class="sidebar-title">~*~ MYSPACE MUSIC ~*~</h3>
-        <audio id="myspaceAudio" loop>
-          <source src="music/birthday-song.mp3" type="audio/mpeg">
-          <source src="music/birthday-song.ogg" type="audio/ogg">
-        </audio>
-        <div class="audio-controls-compact">
-          <button id="playPauseBtn" class="tiny-btn">▶</button>
-          <button id="volumeBtn" class="tiny-btn">🔊</button>
-          <input type="range" id="volumeSlider" min="0" max="100" value="70" class="tiny-slider">
+        <h3 class="sidebar-title">~*~ MY MUSIC ~*~</h3>
+        <p class="music-label">Now Playing: Fame is a Gun - Addison Rae</p>
+      </div>
+
+      <!-- About Me - moved to sidebar -->
+      <div class="about-box">
+        <h3 class="sidebar-title">~*~ ABOUT MOLLY ~*~</h3>
+        <div class="about-text">
+          <p class="blink-text">🎂 TURNING 28 TODAY! 🎂</p>
+          <p>cool hot sexy funny redhead, sometimes 5'5 sometimes 5'8</p>
+          <p>sweetest girl in the world, best music taste in the world</p>
+          <p>loved by all who meet me</p>
         </div>
-        <p class="music-label">Now Playing: Birthday Song</p>
       </div>
     </div>
 
@@ -51,89 +44,101 @@
       <div class="profile-header-messy">
         <h1 class="main-title">~*~* HAPPY BIRTHDAY MOLLY SHEA ~*~*</h1>
         <marquee behavior="scroll" direction="left" class="marquee-banner">
-          <span class="blink">✨ 28 AND FABULOUS ✨</span> | 
-          <span class="blink">💖 MOLLY SLAY 💖</span> | 
-          <span class="blink">🎂 BEST DAY EVER 🎂</span> |
+          <span class="blink">✨ 28 AND SLAYFUL! ✨</span> | 
+          <span class="pulse">💖 MOLLY SLAY 💖</span> | 
+          <span class="bounce">🎂 BEST DAY EVER 🎂</span> |
           <span class="blink">🌟 TURNING 28 TODAY 🌟</span>
         </marquee>
       </div>
 
-      <!-- Top 8 Friends -->
+      <!-- Large Profile Pic - Front and Center -->
+      <div class="profile-pic-large-section">
+        <h2 class="section-header">~*~ PROFILE PIC ~*~</h2>
+        <div class="large-profile-pic-frame">
+          <img src="images/profile.JPG" alt="Molly" class="large-profile-pic" onerror="this.src='images/lana_laydown.png'">
+        </div>
+      </div>
+
+      <!-- Call to Action - Make it SUPER obvious -->
+      <div class="cta-box">
+        <h2 class="section-header blink">~*~ LEAVE MOLLY A BIRTHDAY MESSAGE! ~*~</h2>
+        <p class="cta-text">Your friends and family want to wish you a happy birthday!</p>
+        <a href="board.html" class="huge-message-button bounce">~*~ CLICK HERE TO LEAVE A MESSAGE ~*~</a>
+      </div>
+
+      <!-- Top 8 Friends - moved below CTA -->
       <div class="friends-section">
         <h2 class="section-header">~*~ TOP 8 FRIENDS ~*~</h2>
         <div class="friends-list">
           <div class="friend-item">
             <span class="friend-rank">1.</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Ariana_Grande_2013.jpg/800px-Ariana_Grande_2013.jpg" alt="Ariana" class="tiny-friend-pic" onerror="this.src='https://via.placeholder.com/50/ff69b4/ffffff?text=A'">
-            <span class="friend-name-small">Ariana Grande</span>
-          </div>
-          <div class="friend-item">
-            <span class="friend-rank">2.</span>
-            <img src="images/lana_laydown.png" alt="Lana" class="tiny-friend-pic">
-            <span class="friend-name-small">Lana Del Rey</span>
-          </div>
-          <div class="friend-item">
-            <span class="friend-rank">3.</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Addison_Rae_2021.png" alt="Addison" class="tiny-friend-pic" onerror="this.src='https://via.placeholder.com/50/00bfff/ffffff?text=A'">
-            <span class="friend-name-small">Addison Rae</span>
-          </div>
-          <div class="friend-item">
-            <span class="friend-rank">4.</span>
-            <div class="tiny-friend-pic placeholder-pic">?</div>
-            <span class="friend-name-small">Friend #4</span>
+            <img src="images/ireland.png" alt="ireland" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">ireland</span>
           </div>
           <div class="friend-item">
             <span class="friend-rank">5.</span>
-            <div class="tiny-friend-pic placeholder-pic">?</div>
-            <span class="friend-name-small">Friend #5</span>
+            <img src="images/jeremy.gif" alt="jeremy del rey" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">jeremy del rey</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">2.</span>
+            <img src="images/arianka.gif" alt="arianka grande" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">arianka grande</span>
           </div>
           <div class="friend-item">
             <span class="friend-rank">6.</span>
-            <div class="tiny-friend-pic placeholder-pic">?</div>
-            <span class="friend-name-small">Friend #6</span>
+            <img src="images/reformation.avif" alt="reformation" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">reformation</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">3.</span>
+            <img src="images/arigato.webp" alt="arigato grande" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">arigato grande</span>
           </div>
           <div class="friend-item">
             <span class="friend-rank">7.</span>
-            <div class="tiny-friend-pic placeholder-pic">?</div>
-            <span class="friend-name-small">Friend #7</span>
+            <img src="images/max.jpg" alt="max shea" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">max shea</span>
+          </div>
+          <div class="friend-item">
+            <span class="friend-rank">4.</span>
+            <img src="images/hijabiana.jpeg" alt="hibajiana" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">hibajiana</span>
           </div>
           <div class="friend-item">
             <span class="friend-rank">8.</span>
-            <div class="tiny-friend-pic placeholder-pic">?</div>
-            <span class="friend-name-small">Friend #8</span>
+            <img src="images/ann.JPG" alt="ann kuhns" class="tiny-friend-pic" onerror="this.className='tiny-friend-pic placeholder-pic'; this.textContent='?'">
+            <span class="friend-name-small">ann kuhns</span>
           </div>
-        </div>
-      </div>
-
-      <!-- About Me -->
-      <div class="about-box">
-        <h2 class="section-header">~*~ ABOUT MOLLY ~*~</h2>
-        <div class="about-text">
-          <p class="blink-text">🎂 TURNING 28 TODAY! 🎂</p>
-          <p>Your friends + fam love you SO MUCH!!!</p>
-          <p>This is the best birthday ever because you're amazing and everyone knows it!!!</p>
-          <p class="glitter-link">
-            <a href="board.html" class="messy-link">~*~ LEAVE A MESSAGE ~*~</a>
-          </p>
         </div>
       </div>
 
       <!-- Status -->
       <div class="status-box">
         <h2 class="section-header">~*~ CURRENT STATUS ~*~</h2>
-        <p class="status-message">🎉 <span class="blink">CELEBRATING 28 YEARS OF BEING AMAZING!!!</span> 🎉</p>
+        <p class="status-message">🎉 <span class="bounce">CELEBRATING MY 28TH BIRTHDAY!!! WOOHOOO!!</span> 🎉</p>
         <p class="mood-display">Mood: <span class="blink">✨ FABULOUS ✨</span></p>
+        <p class="mood-display">Relationship Status: <span class="pulse">it's complicated &lt;3</span></p>
       </div>
 
       <!-- Footer -->
       <div class="profile-footer">
         <p class="footer-note">Made with 💖 by Mia</p>
         <p class="footer-note">This website was primarily vibecoded, so if something breaks just text me and I'll fix it.</p>
-        <p class="footer-note blink">~*~ XOXO ~*~</p>
+        <p class="footer-note rotate">~*~ XOXO ~*~</p>
       </div>
     </div>
+
   </div>
+
+  <!-- Hidden YouTube player for background music -->
+  <iframe id="youtubePlayer" width="1" height="1" src="https://www.youtube.com/embed/8mh_QJ1b1HI?autoplay=1&loop=1&playlist=8mh_QJ1b1HI&controls=0&modestbranding=1&rel=0&mute=0&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" style="position: fixed; top: -9999px; opacity: 0; pointer-events: none;"></iframe>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
